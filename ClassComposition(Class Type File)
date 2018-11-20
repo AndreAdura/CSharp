@@ -1,0 +1,267 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ObjCompositionAndre
+{
+    class Car
+    {
+        private int CVIN, CUnitNo, CSquarefeet, CBedrooms, CBathrooms, Cfloor;
+        private int CYearBuilt;
+        private string CMake, CModel, CColor, CName, CDirection;
+
+
+
+
+        public Car()
+        {
+            CVIN = 0;
+            CYearBuilt = 0;
+            CMake = "Empty";
+            CModel = "Empty";
+            CColor = "Empty";
+
+        }
+
+        public Car(int VIN, int YearBuilt, string Make, string Model, string Color)
+        {
+            SetCar(VIN, YearBuilt, Make, Model, Color);
+        }
+
+        public Car(Car right)
+        {
+            this.CVIN = right.GetVIN();
+            this.CYearBuilt = right.GetYearBuilt();
+            this.CMake = right.GetMake();
+            this.CModel = right.GetModel();
+
+        }
+
+        ~Car()
+        {
+
+        }
+
+        public void SetVIN(int VIN)
+        {
+            CVIN = VIN;
+        }
+
+        public void SetYearBuilt(int YearBuilt)
+        {
+            CYearBuilt = YearBuilt;
+        }
+
+        public void SetMake(string Make)
+        {
+            CMake = Make;
+        }
+
+        public void SetModel(string Model)
+        {
+            CModel = Model;
+        }
+
+        public void SetColor(string Color)
+        {
+            CColor = Color;
+        }
+
+        public void SetCar(int VIN, int YearBuilt, string Make, string Model, string Color)
+        {
+            CVIN = VIN;
+            CYearBuilt = YearBuilt;
+            CMake = Make;
+            CModel = Model;
+            CColor = Color;
+
+        }
+
+        public int GetVIN()
+        {
+            return CVIN;
+        }
+
+
+        public int GetYearBuilt()
+        {
+            return CYearBuilt;
+        }
+
+        public string GetMake()
+        {
+            return CMake;
+
+        }
+
+        public string GetModel()
+        {
+            return CModel;
+
+        }
+
+        public string GetColor()
+        {
+            return CColor;
+
+        }
+
+        public string MakeString()
+        {
+            string temp;
+            temp = "VIN = " + CVIN;
+            temp = temp + "\n Year Built = " + CYearBuilt;
+            temp = temp + "\n Make = " + CMake;
+            temp = temp + "\n Model = " + CModel;
+            temp = temp + "\n Color =  " + CColor;
+            return temp;
+        }
+
+    }
+
+    //=================================================================== Here Starts My Second Class =================================================
+
+    class Unit
+    {
+        private int CUnitNo, CSquarefeet, CBedrooms, CBathrooms, Cfloor;
+     
+        private string CName, CDirection;
+
+
+
+
+        public Unit()
+        {
+            CUnitNo = 0;
+            CSquarefeet = 0;
+            CBedrooms = 0;
+            CBathrooms = 0;
+            Cfloor = 0;
+            CName = "Empty";
+            CDirection = "Empty";
+
+        }
+
+        public Unit(int UnitNo, int Squarefeet, int Bedrooms, int Bathrooms, int Floor, string Name, string Direction)
+        {
+            SetUnit(UnitNo, Squarefeet,  Bedrooms,  Bathrooms,  Floor,  Name, Direction);
+        }
+
+        public Unit(Unit right)
+        {
+            this.CUnitNo = right.GetUnitno();
+            this.CSquarefeet = right.GetSquarefeet();
+            this.CBedrooms = right.GetBedrooms();
+            this.CBathrooms = right.GetBathrooms();
+            this.Cfloor = right.GetFloor();
+            this.CName = right.GetName();
+            this.CDirection = right.GetDirection();
+
+        }
+
+        ~Unit()
+        {
+
+        }
+
+        public void SetUnitNo(int UnitNo)
+        {
+            CUnitNo = UnitNo;
+        }
+
+        public void SetSquarefeet(int Squarefeet)
+        {
+            CSquarefeet = Squarefeet;
+        }
+
+        public void SetBedrooms(int Bedrooms)
+        {
+            CBedrooms = Bedrooms;
+        }
+
+        public void SetBathrooms(int Bathrooms)
+        {
+            CBathrooms = Bathrooms;
+        }
+
+        public void SetFloor(int Floor)
+        {
+            Cfloor = Floor;
+        }
+
+        public void SetName(string Name)
+        {
+            CName = Name;
+        }
+
+        public void SetDirection(string Direction)
+        {
+            CDirection = Direction;
+        }
+
+        public void SetUnit(int UnitNo, int Squarefeet, int Bedrooms, int Bathrooms, int Floor, string Name, string Direction)
+        {
+            CUnitNo = UnitNo;
+            CSquarefeet = Squarefeet;
+            CBedrooms = Bedrooms;
+            CBathrooms = Bathrooms;
+            Cfloor = Floor;
+            CName = Name;
+            CDirection = Direction;
+
+        }
+
+        public int GetUnitno()
+        {
+            return CUnitNo;
+        }
+
+
+        public int GetSquarefeet()
+        {
+            return CSquarefeet;
+        }
+
+        public int GetBedrooms()
+        {
+            return CBedrooms;
+        }
+
+        public int GetBathrooms()
+        {
+            return CBathrooms;
+        }
+
+        public int GetFloor()
+        {
+            return Cfloor;
+        }
+
+        public string GetName()
+        {
+            return CName;
+
+        }
+
+        public string GetDirection()
+        {
+            return CDirection;
+
+        }
+
+        public string MakeString()
+        {
+            string temp;
+            temp = "UnitNo = " + CUnitNo;
+            temp = temp + "\n SquareFeet = " + CSquarefeet;
+            temp = temp + "\n Bedrooms = " + CBedrooms;
+            temp = temp + "\n Floor = " + Cfloor;
+            temp = temp + "\n Name =  " + CName;
+            temp = temp + "\n Direction =  " + CDirection;
+            return temp;
+        }
+
+    }
+}
